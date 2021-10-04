@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BeanStalkPOC.Api</name>
+    </assembly>
+    <members>
+        <member name="T:BeanStalkPOC.Api.Controllers.StudentController">
+            <summary>
+            Student controller
+            </summary>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Controllers.StudentController.#ctor(BeanStalkPOC.Business.Students.IStudentService,BeanStalkPOC.Utility.Singleton.ISingleton,Microsoft.Extensions.Logging.ILogger{BeanStalkPOC.Api.Controllers.StudentController})">
+            <summary>
+            Initializes student controller.
+            </summary>
+            <param name="studentService">student service</param>
+            <param name="singleton">singleton</param>
+            <param name="logger">logger</param>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Controllers.StudentController.GetStudentsAsync">
+            <summary>
+            Method to get list of students.
+            </summary>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Controllers.StudentController.GetStudentByIDAsync(System.Int32)">
+            <summary>
+            Method to get student object.
+            </summary>
+            <param name="studentId">student primary key.</param>
+        </member>
+        <member name="T:BeanStalkPOC.Api.Controllers.UserController">
+            <summary>
+            User controller
+            </summary>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Controllers.UserController.#ctor(BeanStalkPOC.Business.Users.IUserService,BeanStalkPOC.Utility.Singleton.ISingleton)">
+            <summary>
+            Initilizer user controller
+            </summary>
+            <param name="userService">user service injection</param>
+            <param name="singleton">singleton service injection</param>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Controllers.UserController.GetUsersAsync">
+            <summary>
+            Method to get list of users.
+            </summary>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Controllers.UserController.GetUserByIDAsync(System.Int64)">
+            <summary>
+            Method to get user object.
+            </summary>
+            <param name="userId">user primary key.</param>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Controllers.UserController.GenerateToken(BeanStalkPOC.Data.User.GetUserInput)">
+            <summary>
+            Method to generate token for user authentication.
+            </summary>
+            <param name="input">input object</param>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Controllers.UserController.ValidateToken(BeanStalkPOC.Data.User.GetUserInput)">
+            <summary>
+            Method to validate token.
+            </summary>
+            <param name="input">input object</param>
+        </member>
+        <member name="T:BeanStalkPOC.Api.CustomFilters.ExceptionActionFilter">
+            <summary>
+            Exception filter
+            </summary>
+        </member>
+        <member name="M:BeanStalkPOC.Api.CustomFilters.ExceptionActionFilter.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.ApplicationInsights.TelemetryClient)">
+            <summary>
+            Initialize values for ExceptionActionFilter
+            </summary>
+            <param name="hostingEnvironment"></param>
+            <param name="telemetryClient"></param>
+        </member>
+        <member name="M:BeanStalkPOC.Api.CustomFilters.ExceptionActionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            Method to capture on exception event
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage">
+            <summary>
+            Class contains message constants for api response
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.ServerError">
+            <summary>
+            Server Error.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.DataNotFound">
+            <summary>
+            Data not found.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.DataSuccess">
+            <summary>
+            Data successfully fetched.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.EmailQueueSuccess">
+            <summary>
+            Data successfully fetched.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.RecordSavedSuccess">
+            <summary>
+            Record saved successfully.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.RecordAlreadyExists">
+            <summary>
+            Record already exists.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.RecordSavedFailure">
+            <summary>
+            Record saving failed.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.RecordUpdatedSuccess">
+            <summary>
+            Record updated successfully.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.RecordUpdatedFailure">
+            <summary>
+            Record updated failure.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.RecordDeletedSuccess">
+            <summary>
+            Record deleted success.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.RecordDeletedFailure">
+            <summary>
+            Record deleted failure.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.RecordCancelledSuccess">
+            <summary>
+            Record cancelled success.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.RecordCancelledFailure">
+            <summary>
+            Record cancelled failure.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.InvalidToken">
+            <summary>
+            Invalid Token.
+            </summary>
+        </member>
+        <member name="F:BeanStalkPOC.Api.Infrastructure.ApiResponseMessage.ValidToken">
+            <summary>
+            Valid Token.
+            </summary>
+        </member>
+        <member name="T:BeanStalkPOC.Api.Infrastructure.Logging.ClassicLogger">
+            <summary>
+            Custom logger for framework.
+            </summary>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Infrastructure.Logging.ClassicLogger.#ctor(System.String,BeanStalkPOC.Api.Infrastructure.Logging.LoggerConfiguration)">
+            <summary>
+            Initializes classic logger.
+            </summary>
+            <param name="name">name string</param>
+            <param name="config">logger configuration object</param>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Infrastructure.Logging.ClassicLogger.BeginScope``1(``0)">
+            <summary>
+            Begin scope
+            </summary>
+            <typeparam name="TState"></typeparam>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Infrastructure.Logging.ClassicLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            IsEnables method
+            </summary>
+            <param name="logLevel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Infrastructure.Logging.ClassicLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
+            <summary>
+            Log method
+            </summary>
+            <typeparam name="TState"></typeparam>
+            <param name="logLevel"></param>
+            <param name="eventId"></param>
+            <param name="state"></param>
+            <param name="exception"></param>
+            <param name="formatter"></param>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Infrastructure.Logging.ClassicLogger.WriteTextToFile(System.String)">
+            <summary>
+            Write text to file.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:BeanStalkPOC.Api.Infrastructure.Logging.ClassicLoggerProvider">
+            <summary>
+            Logger provider.
+            </summary>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Infrastructure.Logging.ClassicLoggerProvider.#ctor(BeanStalkPOC.Api.Infrastructure.Logging.LoggerConfiguration)">
+            <summary>
+            Initializes classic logger provider.
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Infrastructure.Logging.ClassicLoggerProvider.CreateLogger(System.String)">
+            <summary>
+            Create logger method.
+            </summary>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Infrastructure.Logging.ClassicLoggerProvider.Dispose">
+            <summary>
+            Method to dispose.
+            </summary>
+        </member>
+        <member name="T:BeanStalkPOC.Api.Infrastructure.Logging.LoggerConfiguration">
+            <summary>
+            Logger configuration.
+            </summary>
+        </member>
+        <member name="P:BeanStalkPOC.Api.Infrastructure.Logging.LoggerConfiguration.LogLevel">
+            <summary>
+            Log level
+            </summary>
+        </member>
+        <member name="P:BeanStalkPOC.Api.Infrastructure.Logging.LoggerConfiguration.EventId">
+            <summary>
+            Event id
+            </summary>
+        </member>
+        <member name="T:BeanStalkPOC.Api.Infrastructure.ProcessResponse">
+            <summary>
+            Method contains apiresponse properties and method to created desired response.
+            </summary>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Infrastructure.ProcessResponse.Create(System.Object,System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Method to create common response for API.
+            </summary>
+            <param name="result">result object</param>
+            <param name="message">message string</param>
+            <param name="statusCode">status code</param>
+            <returns>ObjectResult</returns>
+        </member>
+        <member name="T:BeanStalkPOC.Api.Startup">
+            <summary>
+            Startup class
+            </summary>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initialize startup
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:BeanStalkPOC.Api.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:BeanStalkPOC.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="loggerFactory"></param>
+        </member>
+    </members>
+</doc>
